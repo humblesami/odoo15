@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="ClientDetailsEdit">
+        <t t-jquery='.client-details-left .client-detail:last' t-operation='after'>
+            <div class="client-detail">
+                <span class="label">Vehicle</span>
+                <input class="detail vehicle" name="vehicle_number" t-att-value='partner.vehicle_number || ""' placeholder='Vehicle Number' />
+            </div>
+        </t>
+    </t>
+    <t t-extend="ClientDetails">
+        <t t-jquery='.client-details-left .client-detail:last' t-operation='after'>
+            <div class='client-detail'>
+                <span class='label'>Vehicle</span>
+                <t t-if='partner.vehicle_number'>
+                    <span class='detail client-vehicle'><t t-esc='partner.vehicle_number' /></span>
+                </t>
+                <t t-if='!partner.vehicle_number'>
+                    <span class='detail client-vehicle empty'>N/A</span>
+                </t>
+            </div>
+        </t>
+    </t>
+</templates>

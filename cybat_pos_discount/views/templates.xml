@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <template id="assets" inherit_id="point_of_sale.assets_common">
+        <xpath expr="." position="inside">
+            <link href="/cybat_pos_discount/static/src/css/discount.css" type="text/css" rel="stylesheet" />
+        </xpath>
+    </template>
+    </data>
+</odoo>
